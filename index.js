@@ -1,6 +1,15 @@
 const express = require('express')
+const { version } = require('./package.json')
 const app = express()
 const port = process.env.PORT || 3002
+
+app.get('/health', (req, res) => {
+    res.send('ok')
+})
+
+app.get('/version', (req, res) =>{
+    res.send(version)
+})
 
 app.get('/', (req, res)=>{
     res.status(200).json("Run app express in heroku with github actions!!!");
