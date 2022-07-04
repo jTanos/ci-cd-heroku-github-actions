@@ -15,6 +15,10 @@ app.get('/', (req, res)=>{
     res.status(200).json("Run app express in heroku with github actions!!!");
 })
 
+app.get('/test', (req, res)=>{
+    res.status(200).json("Run test endpoint!!!");
+})
+
 const server = app.listen(port, ()=>{
     console.log(`Example server in docker on port ${port}`)
 })
